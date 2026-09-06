@@ -34,8 +34,12 @@
 //! # }
 //! ```
 
+pub mod args;
 pub mod cli;
 pub mod composite;
+pub mod content;
+pub mod paths;
+pub mod sandbox;
 pub mod server;
 pub mod single;
 pub mod spill;
@@ -45,6 +49,8 @@ use std::sync::Arc;
 
 pub use cli::{ServerOptions, Transport};
 pub use composite::{Composite, Member};
+pub use content::{MAX_OUTPUT_BYTES, looks_binary, write_atomically};
+pub use sandbox::Sandbox;
 pub use server::ToolServer;
 pub use spill::{Captured, SpillDir, Spilled};
 pub use tool::{
