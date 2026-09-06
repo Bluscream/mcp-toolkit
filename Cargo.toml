@@ -1,6 +1,6 @@
 [package]
 name = "mcp-toolkit"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2024"
 rust-version = "1.88"
 description = "Shared machinery for standalone MCP tool servers: CLI, transports, single-tool mode and timeouts on top of the official rmcp SDK"

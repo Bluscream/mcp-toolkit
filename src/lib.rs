@@ -35,6 +35,7 @@
 //! ```
 
 pub mod cli;
+pub mod composite;
 pub mod server;
 pub mod single;
 pub mod tool;
@@ -42,6 +43,7 @@ pub mod tool;
 use std::sync::Arc;
 
 pub use cli::{ServerOptions, Transport};
+pub use composite::{Composite, Member};
 pub use server::ToolServer;
 pub use tool::{
     ToolDef, ToolFailure, ToolGroup, ToolOutput, ToolResult, ensure_timeout_property,
