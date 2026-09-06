@@ -74,7 +74,7 @@ impl Composite {
                     }
                     continue;
                 }
-                tool.name = advertised.clone();
+                tool.name.clone_from(&advertised);
                 routes.insert(advertised, index);
                 tools.push(tool);
             }
