@@ -118,7 +118,7 @@ impl Sink {
                 self.open();
             }
             if let Some(file) = self.file.as_mut() {
-                let outstanding = (self.total - self.written) as usize;
+                let outstanding = usize::try_from(self.total - self.written).unwrap_or(usize::MAX);
                 let start = chunk.len().saturating_sub(outstanding);
                 if let Err(err) = file.write_all(&chunk[start..]) {
                     self.failed = Some(err.to_string());
@@ -137,8 +137,7 @@ impl Sink {
         }
         let stamp = std::time::SystemTime::now()
             .duration_since(std::time::UNIX_EPOCH)
-            .map(|d| d.as_nanos())
-            .unwrap_or(0);
+            .map_or(0, |d| d.as_nanos());
         let path = self.dir.root.join(format!("{}-{stamp}.txt", self.label));
 
         match create_private(&path) {
