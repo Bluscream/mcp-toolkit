@@ -1,6 +1,6 @@
 [package]
 name = "mcp-toolkit"
-version = "0.2.0"
+version = "0.3.0"
 edition = "2024"
 rust-version = "1.88"
 description = "Shared machinery for standalone MCP tool servers: CLI, transports, single-tool mode and timeouts on top of the official rmcp SDK"
@@ -23,6 +23,7 @@ tracing = "0.1.44"
 tracing-subscriber = { version = "0.3.23", features = ["env-filter"] }
 
 [dev-dependencies]
+tempfile = "3.27.0"
 tokio = { version = "1.53.1", features = ["full"] }
 
 [profile.release]

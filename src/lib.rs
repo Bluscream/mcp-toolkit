@@ -38,6 +38,7 @@ pub mod cli;
 pub mod composite;
 pub mod server;
 pub mod single;
+pub mod spill;
 pub mod tool;
 
 use std::sync::Arc;
@@ -45,6 +46,7 @@ use std::sync::Arc;
 pub use cli::{ServerOptions, Transport};
 pub use composite::{Composite, Member};
 pub use server::ToolServer;
+pub use spill::{Captured, SpillDir, Spilled};
 pub use tool::{
     ToolDef, ToolFailure, ToolGroup, ToolOutput, ToolResult, ensure_timeout_property,
     requested_timeout, strip_timeout,
